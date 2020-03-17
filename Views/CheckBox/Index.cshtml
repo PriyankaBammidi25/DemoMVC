@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DemoMVC.Models.EMPDATA>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Display","CheckBox"))
+{
+    
+    if (Model != null)
+    {
+        <table border="1">
+            <tr>
+                <td>Button</td>
+                <td>EMPNO</td>
+                <td>ENAME</td>
+                <td>JOB</td>
+                <td>MGR</td>
+                <td>HIREDATE</td>
+                <td>SAL</td>
+                <td>COMM</td>
+                <td>DEPTNO</td>
+            </tr>
+            @foreach (var E in Model)
+            {
+                <tr>
+                    <td><input type="checkbox" name="ch" id="@E.EMPNO" value="@E.EMPNO" /></td>
+                    <td>@E.EMPNO</td>
+                    <td>@E.ENAME</td>
+                    <td>@E.JOB</td>
+                    <td>@E.MGR</td>
+                    <td>@E.HIREDATE</td>
+                    <td>@E.SAL</td>
+                    <td>@E.COMM</td>
+                    <td>@E.DEPTNO</td>
+                </tr>
+            }
+            <tr>
+                <td><input type="submit" /></td>
+            </tr>
+        </table>
+    }
+    
+}

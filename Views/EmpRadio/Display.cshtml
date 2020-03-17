@@ -1,0 +1,61 @@
+﻿@*@model DemoMVC.Models.EMPDATA*@
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+@*Empno: @Model.EMPNO
+Ename: @Model.ENAME
+Job: @Model.JOB
+Hiredate: @Model.HIREDATE
+Mgr: @Model.MGR
+Sal: @Model.SAL
+Comm: @Model.COMM
+Deptno: @Model.DEPTNO*@
+
+@using (Html.BeginForm())
+    {
+    <table>
+        <tr>
+            <td>Emp Number</td>
+            @*<td>@Html.TextBoxFor(a => a.EMPNO)</td>*@
+            <td>@Html.TextBox("EMPNO",(object)ViewBag.E.EMPNO)</td>
+        </tr>
+        <tr>
+            <td>Emp Name</td>
+            @*<td>@Html.TextBoxFor(a => a.ENAME)</td>*@
+            <td>@Html.TextBox("ENAME", (object)ViewBag.E.ENAME)</td>
+        </tr>
+        <tr>
+            <td>Job</td>
+            @*<td>@Html.TextBoxFor(a => a.JOB)</td>*@
+            <td>@Html.TextBox("JOB", (object)ViewBag.E.JOB)</td>
+        </tr>
+        <tr>
+            <td>Manager</td>
+            @*<td>@Html.TextBoxFor(a => a.MGR)</td>*@
+            <td>@Html.TextBox("MGR", (object)ViewBag.E.MGR)</td>
+        </tr>
+        <tr>
+            <td>Hiredate</td>
+            @*<td>@Html.TextBoxFor(a => a.HIREDATE)</td>*@
+            <td>@Html.TextBox("HIREDATE", (object)ViewBag.E.HIREDATE)</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            @*<td>@Html.TextBoxFor(a => a.SAL)</td>*@
+            <td>@Html.TextBox("SAL", (object)ViewBag.E.SAL)</td>
+        </tr>
+        <tr>
+            <td>Commission</td>
+            @*<td>@Html.TextBoxFor(a => a.COMM)</td>*@
+            <td>@Html.TextBox("COMM", (object)ViewBag.E.COMM)</td>
+        </tr>
+        <tr>
+            <td>Dept Number</td>
+            @*<td>@Html.TextBoxFor(a => a.DEPTNO)</td>*@
+            <td>@Html.TextBox("DEPTNO", (object)ViewBag.E.DEPTNO)</td>
+        </tr>
+    </table>
+    }
+

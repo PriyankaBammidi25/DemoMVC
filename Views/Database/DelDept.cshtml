@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DemoMVC.Models.EMPDATA>
+@{
+    ViewBag.Title = "DelDept";
+}
+
+<h2>DelDept</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Ennter Deptno</td>
+            <td>
+                @Html.DropDownList("ddlEmpno",
+                new SelectList(ViewBag.DL, "Empno", "Ename", ViewBag.DDL),
+                "Select", new { onblur = "func1();" })
+            </td>
+            <td><input type="submit" value="ddlDeptno" onclick="func2();" /></td>
+        </tr>
+    </table>
+}
+<script>
+    function func2()
+    {
+        
+        var eno = document.getElementById("ddlEmpno").value;
+        prompt("enter Yes or No");
+        
+    }
+</script>
+
